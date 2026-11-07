@@ -2,10 +2,12 @@ package com.example.data.model
 
 data class SyrianWeatherStation(
     val id: String,
+    val stationCode: String = "",
     val nameAr: String,
     val governorate: String,
     val latitude: Double,
     val longitude: Double,
+    val elevationMeters: Double = 0.0,
     val temperatureCelsius: Double,
     val humidity: Int,
     val pressureHpa: Double,
@@ -13,7 +15,9 @@ data class SyrianWeatherStation(
     val conditionAr: String,
     val conditionType: WeatherConditionType,
     val isOnline: Boolean = true,
-    val lastReadingTime: String = "منذ 10 دقائق"
+    val lastReadingTime: String = "منذ 10 دقائق",
+    val dataSource: String = "المركز الوطني للأرصاد والمناخ (MCNC)",
+    val qualityStatus: String = "موثّق ومفحوص"
 )
 
 data class CapAlertItem(
